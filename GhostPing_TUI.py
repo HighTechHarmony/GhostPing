@@ -208,7 +208,7 @@ class NetworkMonitor:
         self.next_refresh_due: Optional[float] = None
         self.scan_in_progress = False
         self.cycles = 0
-        self.bootstrap_scans_left = 3
+        self.bootstrap_scans_left = 1
 
     def start(self) -> None:
         self.thread = threading.Thread(target=self._run, name="ghostping-monitor", daemon=True)
