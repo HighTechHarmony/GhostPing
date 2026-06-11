@@ -186,7 +186,7 @@ class NetworkMonitor:
         self,
         network: ipaddress.IPv4Network,
         interval: float,
-        ping_timeout: float = 1.0,
+        ping_timeout: float = 2.0,
         ping_workers: int = 50,
     ) -> None:
         self.network = network
@@ -727,7 +727,7 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     )
     parser.add_argument("--ascii", action="store_true", help="use ASCII symbols instead of block glyphs")
     parser.add_argument("--ping-workers", type=int, default=50, help="concurrent ping worker count")
-    parser.add_argument("--ping-timeout", type=positive_float, default=1.0, help="per-host ping timeout")
+    parser.add_argument("--ping-timeout", type=positive_float, default=2.0, help="per-host ping timeout")
     return parser.parse_args(argv)
 
 
